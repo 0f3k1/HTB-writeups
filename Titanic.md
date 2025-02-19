@@ -72,7 +72,7 @@ To open a table or view its contents, use the command `select * from **table**`;
 ![hashes](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-17%20141214.png)
 
 ### Rabbit hole
-Initially, I thought cracking the Gitea hashes with Hashcat would be straightforward. I put all the PBKDF2 hashes into a file, ran them through Hashcat using the correct format, and tried to get the password to access the system. 
+Initially, I thought cracking the Gitea hashes with Hashcat would be straightforward. I put all the PBKDF2 hashes into a file, ran them through Hashcat using the correct format, and tried to get the password to access the system. But it wasn't as simple as that :) 
 
 ### Continuing to crack the hashes (0xdf explanation)
 However, it turned out to be more complicated than I expected. After some trial and error, I decided to research further and came across a helpful HTB write-up by 0xdf, [writeup](https://0xdf.gitlab.io/2024/12/14/htb-compiled.html#)
