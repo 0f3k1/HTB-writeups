@@ -92,7 +92,7 @@ Since I now had credentials, I could SSH into the developer account and retrieve
 
 ### Privilege Escalation
 I checked if the developer account had any specific privileges, but it had none.
-![sudo privs](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-18%20181050.png)
+![sudo_privs](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-18%20181050.png)
 
 I ran LinPEAS on the target and found an interesting executable file `magick` 
 ![magick](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-18%20181344.png)
