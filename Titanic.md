@@ -62,7 +62,7 @@ Going back to the **ticket** parameter, we can try accessing the contents of `ap
 After reviewing all the files from the Burp Suite response, I noticed a gitea.db file in the database section.
 ![database](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-17%20140441.png)
 
-Since the retrieved format is messy and difficult to read, I downloaded the file to my system for further enumeration.
+Since the retrieved format is messy and difficult to read, I downloaded the file to my system.
 ![downloadsing](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-17%20140653.png)
 
 Since the database is an SQLite database, I used sqlite3 to open and explore its contents in a more readable format.
