@@ -17,3 +17,4 @@ Running an **Nmap** scan revealed two open TCP ports:
 
 ### Enumeration
 Exploring the web application, there isn’t much to see at first, except for an interesting **"Book Now"** button.
+![web app](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-17%20132927.png)
