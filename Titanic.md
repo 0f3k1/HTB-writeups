@@ -109,7 +109,7 @@ The script goes to the `/opt/app/static/assets/images` folder, clears the `metad
 After researching ImageMagick vulnerabilities, I found an interesting proof of concept (PoC) that exploits how ImageMagick handles environment variables. 
 ![PoC](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-18%20182254.png)
 
-There are essentially two ways to exploit this vulnerability [privEsc](https://github.com/ImageMagick/ImageMagick/security/advisories/GHSA-8rxc-922v-phg8). The first involves abusing `MAGICK_CONFIGURE_PATH`, which allows loading a malicious configuration file from the current directory. The second, which I used, takes advantage of how files are executed in `/opt/app/static/assets/images` by creating a fake `libc` file there. 
+There are essentially two ways to exploit this vulnerability [PrivEsc](https://github.com/ImageMagick/ImageMagick/security/advisories/GHSA-8rxc-922v-phg8). The first involves abusing `MAGICK_CONFIGURE_PATH`, which allows loading a malicious configuration file from the current directory. The second, which I used, takes advantage of how files are executed in `/opt/app/static/assets/images` by creating a fake `libc` file there. 
 
 We can use the `gcc` command to compile the code into a malicious shared library (`libxcb.so.1`). After compiling the library, we execute `magick /dev/null /dev/null`, which triggers the library to load and executes the `system("chmod u+s /bin/bash")` command from within the library. Finally, we can use the command `/bin/bash -p` to spawn a root shell, as the `chmod` command sets the `setuid` bit on `/bin/bash`, granting us elevated privileges.
 ![root](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-18%20183225.png)
