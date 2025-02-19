@@ -9,3 +9,6 @@ Titanic
 
 
 ### Initial Foothold
+Running an **Nmap** scan revealed two open TCP ports:
+- **22/tcp (SSH):** OpenSSH 8.9p1 running on Ubuntu.
+- **80/tcp (HTTP):** Web application
