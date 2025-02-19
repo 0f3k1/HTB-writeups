@@ -75,7 +75,8 @@ To open a table or view its contents, use the command `select * from **table**`;
 Initially, I thought cracking the Gitea hashes with Hashcat would be straightforward. I put all the PBKDF2 hashes into a file, ran them through Hashcat using the correct format, and tried to get the password to access the system. But it wasn't as simple as that :) 
 
 ### Continuing to crack the hashes (0xdf explanation)
-However, it turned out to be more complicated than I expected. After some trial and error, I decided to research further and came across a helpful HTB write-up by 0xdf, [writeup](https://0xdf.gitlab.io/2024/12/14/htb-compiled.html#)
+After some trial and error, I decided to research further on how to crack these hashes and came across a helpful HTB write-up by 0xdf,
+[writeup](https://0xdf.gitlab.io/2024/12/14/htb-compiled.html#)
 
 He explained that brute-forcing the Gitea hashes isn't simple because Gitea uses PBKDF2 with SHA256, and the hashes are stored in hex, whereas Hashcat expects them in base64. 
 ![hash format](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-18%20135139.png)
