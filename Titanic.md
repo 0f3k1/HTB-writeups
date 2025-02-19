@@ -68,7 +68,7 @@ Since the retrieved format is messy and difficult to read, I downloaded the file
 Since the database is an SQLite database, I used sqlite3 to open and explore its contents in a more readable format.
 ![sqlite](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-17%20140927.png)
 
-To open a table or view its contents, use the command **select * from <table>**; 
+To open a table or view its contents, use the command `select * from **table**`; 
 ![hashes](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-17%20141214.png)
 
 ### Rabbit hole
