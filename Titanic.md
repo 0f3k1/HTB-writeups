@@ -32,6 +32,7 @@ At this point, we can test if the **ticket** parameter is vulnerable to **Local 
 ![lfi](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-17%20134052.png)
 
 I couldn't find anything useful initially, so I bookmarked the section to revisit later.
+
 I looked for subdomains and hidden pages using ffuf to see if anything popped up.
 ![ffuf scan](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-17%20134624.png)
 
