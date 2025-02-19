@@ -92,7 +92,6 @@ Since I now had credentials, I could SSH into the developer account and retrieve
 
 ### Privilege Escalation
 I checked if the developer account had any specific privileges, but it had none.
-
 ![sudo_privs](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-18%20181050.png)
 
 I ran LinPEAS on the target and found an interesting executable file `magick` 
@@ -100,6 +99,7 @@ I ran LinPEAS on the target and found an interesting executable file `magick`
 ![version](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-18%20182156.png)
 
 I also found a file in the `/opt/scripts` directory.
+
 ![directory](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-18%20181458.png)
 
 The script goes to the `/opt/app/static/assets/images` folder, clears the `metadata.log` file, and finds all `.jpg` files. It then uses `magick identify` to gather information about each image and saves it to `metadata.log`
