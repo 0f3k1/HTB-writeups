@@ -31,7 +31,7 @@ Following the redirection leads to a `/download` page containing a **ticket** pa
 At this point, we can test if the **ticket** parameter is vulnerable to **Local File Inclusion (LFI)** by attempting to access system files such as `/etc/passwd`. 
 ![lfi](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-17%20134052.png)
 
-I couldn't find anything useful initially, so I bookmarked the section to revisit later
+I couldn't find anything useful initially, so I bookmarked the section to revisit later.
 I looked for subdomains and hidden pages using ffuf to see if anything popped up.
 ![ffuf scan](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-02-17%20134624.png)
 
