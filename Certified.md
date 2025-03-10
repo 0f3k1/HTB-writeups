@@ -109,6 +109,7 @@ The `certified-DC01-CA` certificate is vulnerable to ESC9.
 ![ESC9](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115437.png)
 
 https://medium.com/@offsecdeer/adcs-exploitation-series-part-2-certificate-mapping-esc15-6e19a6037760
+
 UPN mapping attack (ESC9)
 
 Assigning shadow credentials to the `ca_operator` account enables it to impersonate higher-privileged users
