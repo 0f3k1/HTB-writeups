@@ -116,6 +116,7 @@ Assigning shadow credentials to the `ca_operator` account enables it to imperson
 ![shadow creds](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115450.png)
 
 Updating the `ca_operator` account's UPN to `administrator`, enabling it to impersonate the `administrator` account for authentication.
+
 [UPN](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115458.png)
 
 Requesting a certificate for the `ca_operator` account from the `certified-DC01-CA` certificate authority using its NT hash and the `CertifiedAuthentication` template
