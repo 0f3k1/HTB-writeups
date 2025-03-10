@@ -108,5 +108,25 @@ Looking at the name ca_operator gives us a good hint because CA stands for Certi
 The `certified-DC01-CA` certificate is vulnerable to ESC9.
 ![ESC9](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115437.png)
 
+https://medium.com/@offsecdeer/adcs-exploitation-series-part-2-certificate-mapping-esc15-6e19a6037760
+UPN mapping attack (ESC9)
+
+Assigning shadow credentials to the `ca_operator` account enables it to impersonate higher-privileged users
+![shadow creds](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115450.png)
+
+Updating the `ca_operator` account's UPN to `administrator`, enabling it to impersonate the `administrator` account for authentication.
+[UPN](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115458.png)
+
+Requesting a certificate for the `ca_operator` account from the `certified-DC01-CA` certificate authority using its NT hash and the `CertifiedAuthentication` template
+![request](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115508.png)
+
+Restoring the `ca_operator` account’s UPN to its original value after temporarily changing it for impersonation purposes during the UPN mapping attack.
+![updating](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115517.png)
+
+Authenticating as the `administrator` in the `certified.htb` domain using the `administrator.pfx` certificate
+![authenticate](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115523.png)
+
+Evil-winrm into the Administrato
+![root](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115533.png)
 
 
