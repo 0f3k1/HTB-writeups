@@ -126,7 +126,7 @@ Restoring the `ca_operator` account’s UPN to its original value after temporar
 Authenticating as the `administrator` in the `certified.htb` domain using the `administrator.pfx` certificate
 ![authenticate](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115523.png)
 
-Evil-winrm into the Administrato
+Evil-winrm into the Administrator
 ![root](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115533.png)
 
 
