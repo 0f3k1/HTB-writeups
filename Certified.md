@@ -90,3 +90,23 @@ How it works:
 
 Evil-winrm as MANAGEMENT_SVC
 ![user](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115411.png)
+
+---
+
+## Privilege escalation
+
+Management_svc to ca_operator
+![ca](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115419.png)
+
+Similarly with management_svc has Generic Write privileges over the user `ca_operator` so we can launch a shadow credential attack. 
+
+Force change password for user ca_operator and verifying which allows us to run commands as the ca_operator user
+![passwor](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115430.png)
+
+Looking at the name ca_operator gives us a good hint because CA stands for Certificate Authority which is responsible for handling certificates. We can use certipy as CA_OPERATOR to find all vulnerable certificates on the domain controller. 
+
+The `certified-DC01-CA` certificate is vulnerable to ESC9.
+![ESC9](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115437.png)
+
+
+
