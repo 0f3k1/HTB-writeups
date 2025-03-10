@@ -44,3 +44,9 @@ Create a new password and you'll be logged in
 We can then import our zip file by navigating to the `start by uploading your data`
 ![start](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115035.png)
 ![import](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115041.png)
+
+After exploring through Judith's path we get this nice map
+![map](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115047.png)
+
+Judtih to Management_svc
+![start](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115052.png)
