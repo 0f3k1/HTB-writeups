@@ -50,3 +50,18 @@ After exploring through Judith's path we get this nice map
 
 Judtih to Management_svc
 ![start](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115052.png)
+
+Judith has WriteOwner privileges over the management group meaning we can add Judith to the management group.
+
+How it works:
+- Using `owneredit.py` Judith can change the owner of the Management group to themselves which gives them full control over the group
+
+![join](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115058.png)
+
+- Using `dacledit.py` Judith grants themselves "AddMember" permissions on the group which means they can add themselves into the group.
+
+![privs](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115105.png)
+
+- Using `net rpc group addmem` we can add Judith to the group.
+
+![add](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115111.png)
