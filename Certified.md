@@ -18,6 +18,7 @@ Credentials
 ## Initial Foothold
 
 Nmap scan
+
 ![nmap scan](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20114956.png)
 
 ---
