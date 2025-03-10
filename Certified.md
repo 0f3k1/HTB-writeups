@@ -68,3 +68,25 @@ How it works:
 
 Management to Managament_svc
 ![manage](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115118.png)
+
+Since we have Generic Write privileges over the user `management_svc` we can launch a shadow credential attack. 
+
+How it works:
+- Using `pywhisker` we can generate a certificate. The public key from this certificate is then stored in the `msDS-KeyCredentialLink` attribute in Active Directory for the target use.
+
+![cert](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115335.png)
+
+- Since we generated a certificate, we now have the public key, which allows us to utilize a tool called PKINIT to authenticate to the Key Distribution Center (KDC) and obtain the users TGT and encryption key.
+
+![tgt](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115353.png)
+
+- Once Judith has the TGT, you can set the environment variable to point to the **TGT cache**. Which allows them to reuse the TGT for further authentication without needing to re-authenticate each time.
+
+![cache](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115359.png)
+
+- To retrieve the NT hash we can use the `getnthash` script to give us the management_svc users hash.
+
+![NT hash](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115405.png)
+
+Evil-winrm as MANAGEMENT_SVC
+![user](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115411.png)
