@@ -48,7 +48,7 @@ We can then import our zip file by navigating to the `start by uploading your da
 After exploring through Judith's path we get this nice map
 ![map](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115047.png)
 
-Judtih to Management_svc
+Judtih to Management
 ![start](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115052.png)
 
 Judith has WriteOwner privileges over the management group meaning we can add Judith to the management group.
@@ -65,3 +65,6 @@ How it works:
 - Using `net rpc group addmem` we can add Judith to the group.
 
 ![add](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115111.png)
+
+Management to Managament_svc
+![manage](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115118.png)
