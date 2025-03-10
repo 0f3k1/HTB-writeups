@@ -25,7 +25,7 @@ Nmap scan
 
 ## Enumeration 
 
-Since we have a bunch of LDAP ports open (389, 636, 3268, 3269) we can use bloodhound
+Since we have several LDAP ports open (389, 636, 3268, 3269) we can use Bloodhound
 ![ldap ports](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115008.png)
 
 
@@ -35,26 +35,26 @@ You can download BloodHound from this [URL](https://github.com/SpecterOps/BloodH
 
 ![pass](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115016.png)
 
-To log into BloodHound you have to reset the password using the default credentials: `spam@example.com` and `whatever the password was set to on when you ran he docker`.
+To log into BloodHound you have to reset the password using the default credentials: `spam@example.com` and `whatever the password was set to when you ran the docker`.
 ![login](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115023.png)
 
-Create a new password and you'll be logged in 
+Create a new password and you'll be logged in.
 ![new](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115028.png)
 
-We can then import our zip file by navigating to the `start by uploading your data`
+We can then import our zip file by navigating to the `start by uploading your data`.
 ![start](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115035.png)
 ![import](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115041.png)
 
-After exploring through Judith's path we get this nice map
+After exploring through Judith's path, we get this map.
 ![map](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115047.png)
 
-Judtih to Management
+Juidith to Management
 ![start](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115052.png)
 
 Judith has WriteOwner privileges over the management group meaning we can add Judith to the management group.
 
 How it works:
-- Using `owneredit.py` Judith can change the owner of the Management group to themselves which gives them full control over the group
+- Using `owneredit.py` Judith can change the owner of the Management group to themselves which gives them full control over the group.
 
 ![join](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115058.png)
 
@@ -100,7 +100,7 @@ Management_svc to ca_operator
 
 Similarly with management_svc has Generic Write privileges over the user `ca_operator` so we can launch a shadow credential attack. 
 
-Force change password for user ca_operator and verifying which allows us to run commands as the ca_operator user
+Force change password for user ca_operator and verifying which allows us to run commands as the ca_operator user.
 ![passwor](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115430.png)
 
 Looking at the name ca_operator gives us a good hint because CA stands for Certificate Authority which is responsible for handling certificates. We can use certipy as CA_OPERATOR to find all vulnerable certificates on the domain controller. 
