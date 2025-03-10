@@ -88,7 +88,7 @@ How it works:
 
 ![NT hash](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115405.png)
 
-Evil-winrm as MANAGEMENT_SVC
+Shell as MANAGEMENT_SVC
 ![user](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115411.png)
 
 ---
@@ -127,7 +127,7 @@ Restoring the `ca_operator` account’s UPN to its original value after temporar
 Authenticating as the `administrator` in the `certified.htb` domain using the `administrator.pfx` certificate
 ![authenticate](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115523.png)
 
-Evil-winrm into the Administrator
+Shell as Administrator
 ![root](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-10%20115533.png)
 
 
