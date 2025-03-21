@@ -172,23 +172,23 @@ Achieve SYSTEM-level execution, gaining full control over the affected machines.
 The process goes as follows:
 
 Transfer the [precompiled sharpgpoabuse script](https://github.com/byronkg/SharpGPOAbuse/releases/tag/1.0) script to the target machine.
-![files](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20172247.png)
+![files](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20172247.png)
 
 Create a new GPO name.
 
-![GPO](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-19%20104038.png)
+![GPO](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-19%20104038.png)
 
 Link the new GPO to the domain.
-![link](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-19%20104222.png)
+![link](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-19%20104222.png)
 
 Make M.SchoolBus a local administrator on all machines affected by the GPO. Also, force the Group Policy to update immediately on the affected machines.
-![admin](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-19%20104401.png)
-![verify](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-19%20104437.png)
+![admin](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-19%20104401.png)
+![verify](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-19%20104437.png)
 
 Since the change is only applied to new sessions, we can use [RunasCs](https://github.com/antonioCoco/RunasCs/releases) to escalate to administrator and obtain the root flag.
-![runas](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-19%20105716.png)
+![runas](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-19%20105716.png)
 
-![root flag](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-19%20164824.png)
+![root flag](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-19%20164750.png)
 
 
 
