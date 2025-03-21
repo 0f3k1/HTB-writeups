@@ -70,12 +70,12 @@ Listing all tables within the Gibbon database
 ![tables](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20104221.png)
 
 After searching through the tables, I found a hash in the `gibbonperson` table
-![hash](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20104238.png)
+![hash](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20104238.png)
 
 We can crack the salted hash by using the 1420 format on hashcat (hash:/salt)
-![command](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20104551.png)
-![format](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20105023.png)
-![cracked](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20104910.png)
+![command](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20104551.png)
+![format](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20105023.png)
+![cracked](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20104910.png)
 
 ---
 
