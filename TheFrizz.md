@@ -98,7 +98,7 @@ Setting the enviornment variable
 
 SSH into f.frizzle and get user flag
 
-![user](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20112331.png)
+![user](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20112609.png)
 
 ---
 
@@ -106,10 +106,10 @@ SSH into f.frizzle and get user flag
 
 Users existing on the domain
 
-![user](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20120254.png)
+![user](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20120254.png)
 
 After enumerating for quite some time I couldn't find anything, so I looked in some of the more uncommon areas, such as the Recycle Bin. 
-![recyle bin](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-20%20103419.png)
+![recyle bin](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-20%20103419.png)
 
 Command explanation:
 `gci -Force 'C:\$Recycle.Bin' -Recurse`
@@ -119,12 +119,12 @@ Command explanation:
 -  `-Recurse` lists all files and subdirectories recursively
 
 Using `scp` to copy the file onto my machine
-![scp](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20120101.png)
-![scp1](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20120132.png)
+![scp](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20120101.png)
+![scp1](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20120132.png)
 
 Since its a 7zip file, we can extract it using the command `7z` which puts it into a "wapt" folder
-![7x](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20120154.png)
-![wapt](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20120223.png)
+![7x](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20120154.png)
+![wapt](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20120223.png)
 
 After manually looking through some of the folders, I couldnt find anything, so I used grep to recursively search through all the folders and files.
 
