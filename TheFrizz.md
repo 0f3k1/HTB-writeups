@@ -37,18 +37,18 @@ steps to exploit this vulnerability:
 - Alter the destination directory where the PHP script would be uploaded.
 - Add the img parameter containing the PHP shell and specify the file name where the shell should be stored.
 
-![burp](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20100623.png)
+![burp](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20101502.png)
 
 Accessing the shell via the url
 ![url](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20101454.png)
 
 Getting a shell by URL-encoding a PowerShell  [reverse shell](https://www.revshells.com/) payload and injecting it into the ?cmd= parameter in the URL
-![rev](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20102253.png)
-![urlencod](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20101949.png)
-![url](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20102010.png)
+![rev](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20102253.png)
+![urlencod](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20101949.png)
+![url](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20102010.png)
 
 Intercepting the request with netcat  
-![shell](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20101935.png)
+![shell](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20101935.png)
 
 Looking through the shell, theres an interesting file containing database credentials
 ![gibbon](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20102103.png)
