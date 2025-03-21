@@ -128,36 +128,36 @@ Since its a 7zip file, we can extract it using the command `7z` which puts it in
 
 After manually looking through some of the folders, I couldnt find anything, so I used grep to recursively search through all the folders and files.
 
-![manual](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20120718.png)
-![automatic](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20121053.png)
+![manual](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20120718.png)
+![automatic](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20121053.png)
 
 The password is base64-encoded, so I decoded it using the [the base64decoder](https://www.base64decode.org/)
-![decode](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20121145.png)
+![decode](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20121145.png)
 
 There are two ways we can go about identifying which password this user belongs to. We can either brute-force through all of the users listed on the domain (which might take a minute to set up), or we can simply reverse the order of the password by using the `rev` bash command, which gives a good indication of who this password belongs to.
 
-![rev](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20122419.png)
+![rev](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20122419.png)
 
 Looking back through the net users results, we found a user called M.SchoolBus, so we can try to SSH into it.
 
 We get the same permission denied error
 
-![error](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20122653.png)
+![error](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20122653.png)
 
 We can repeat the same process: set up a ticket, set the environment variable, and SSH into M.SchoolBus.
-![ssh](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20122749.png)
+![ssh](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20122749.png)
 
 Next, run nxc with BloodHound (-k for Kerberos authentication) to gather information about M.SchoolBus.
-![nxc](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20153553.png)
+![nxc](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20153553.png)
 
 
 We can use BloodHound to see what privileges the user M.SchoolBus has over certain resources.
 
 Start the bloodhound docker container and access bloodhound via the web UI on localhost port 8080.
-![docker](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20153641.png)
+![docker](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20153641.png)
 
 Search for the user and use the Cypher query box (e.g., MATCH p=(u:User)-[r1]->(n) WHERE r1.isacl=true RETURN p) to view all the ACLs for that specific user. In this case, M.SchoolBus has multiple privileges over certain resources, but we can focus on the WriteGPlink privilege over the domain controller. 
-![Screenshot 2025-03-18 154123](https://github.com/user-attachments/assets/e3acb6b4-e3bf-4498-8623-41508d682e75)
+![Screenshot 2025-03-18 154123](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20154123.png)
 
 Short explanation:
 
