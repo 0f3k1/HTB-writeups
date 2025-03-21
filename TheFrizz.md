@@ -51,23 +51,23 @@ Intercepting the request with netcat
 ![shell](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20101935.png)
 
 Looking through the shell, theres an interesting file containing database credentials
-![gibbon](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20102103.png)
-![mysql db](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20102118.png)
+![gibbon](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20102103.png)
+![mysql db](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20102118.png)
 
 Going back two directories leads us to a bunch of exectuable files
 
-![db](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20102653.png)
+![db](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20102619.png)
 
 One of them being a mysql executable. Using the credentials in the config.php file to run commands
-![mysql.exe](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20102734.png)
+![mysql.exe](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20102734.png)
 
 Listing all databases
 
-![db](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20104048.png)
+![db](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20104048.png)
 
 Listing all tables within the Gibbon database
-![gibbondb](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20104209.png)
-![tables](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20104221.png)
+![gibbondb](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20104209.png)
+![tables](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20104221.png)
 
 After searching through the tables, I found a hash in the `gibbonperson` table
 ![hash](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20104238.png)
