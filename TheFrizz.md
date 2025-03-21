@@ -81,24 +81,24 @@ We can crack the salted hash by using the 1420 format on hashcat (hash:/salt)
 
 ## getting a shell
 Great, so we have fionas password we can try to ssh, but we get this permission denied error 
-![error](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20105259.png)
+![error](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20105259.png)
 
 gssapi-with-mic is a method to authenticate users and one of the ways it does that is Kerberos authentication. The kerberos realm (/etc/krb5.conf) is where you configure the authentication servers (KDCs). In other words, it's like the "kerberos system configuration" for kerberos related stuff, to let the system know where the server is.
 
-![conf](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20111535.png)
+![conf](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20111535.png)
 
 Once the krb5.conf file is configured, we still need to authenticate with the Kerberos system. This is done by generating a Ticket-Granting Ticket (TGT) from the KDC, which is stored in the Kerberos ticket cache. After that, you set an environment variable to let SSH know the authentication is set up properly, allowing you to connect.
 
 Using `kinit` to generate the tgt, and use `klist` to list out where the cache is stored
-![ticket](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20112136.png)
+![ticket](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20112136.png)
 
 Setting the enviornment variable
 
-![env](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20112325.png)
+![env](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20112325.png)
 
 SSH into f.frizzle and get user flag
 
-![user](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20112609.png)
+![user](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20112331.png)
 
 ---
 
