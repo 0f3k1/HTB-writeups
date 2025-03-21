@@ -15,7 +15,7 @@
 ## Enumeration
 
 Nmap scan revealed multiple open ports
-![nmap](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20094524.png)
+![nmap](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20094524.png)
 ![hosts](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20094559.png)
 
 ---
