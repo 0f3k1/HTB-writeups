@@ -16,13 +16,14 @@
 
 Nmap scan revealed multiple open ports
 ![nmap](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20094524.png)
-![hosts](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20094559.png)
+![hosts](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20094559.png)
 
 ---
 
 ## Rabbit Hole (creator said it could work but I didn't find anything)
 While analyzing the web app, I identified a service and its version number. I decided to search for vulnerabilities and came across an LFI vulnerability in the ?q= parameter of the staff login page. However, after enumerating through the files, I couldn’t find anything useful.
-![lfi](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20094656.png)
+![service](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20094656.png)
+![lfi](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20094738.png)
 
 ---
 
@@ -36,10 +37,10 @@ steps to exploit this vulnerability:
 - Alter the destination directory where the PHP script would be uploaded.
 - Add the img parameter containing the PHP shell and specify the file name where the shell should be stored.
 
-![burp](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20101502.png)
+![burp](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20100623.png)
 
 Accessing the shell via the url
-![url](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20101454.png)
+![url](https://github.com/J4ck3lXploit/HTB-writeups/blob/main/Images/Screenshot%202025-03-18%20101454.png)
 
 Getting a shell by URL-encoding a PowerShell  [reverse shell](https://www.revshells.com/) payload and injecting it into the ?cmd= parameter in the URL
 ![rev](https://github.com/J4ck3lXploit/editing_htb-writeups/blob/main/images/Screenshot%202025-03-18%20102253.png)
